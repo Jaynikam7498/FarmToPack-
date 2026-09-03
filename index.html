@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FarmToPack — Fresh, Natural Products, Packed Directly from Our Farm</title>
+<meta name="description" content="FarmToPack — farm-based mushrooms and natural powders, prepared and packed directly from our farm in Gadegaon, Warud, Amravati, Maharashtra.">
+<link rel="icon" href="https://i.ibb.co/7NzHr1D0/66460.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7F3E8;
+    --charcoal:#25251F;
+    --green:#3E633E;
+    --brown:#7A5638;
+    --chili:#B83A2D;
+    --gold:#C89525;
+    --cream-2:#EFE8D4;
+    --line: rgba(37,37,31,0.14);
+    --shadow: 0 10px 30px rgba(37,37,31,0.10);
+    --radius: 18px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--charcoal);
+    font-family:'DM Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  h1,h2,h3,h4{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    margin:0;
+    color:var(--charcoal);
+    letter-spacing:0.2px;
+  }
+  p{margin:0;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:'DM Sans', sans-serif;
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:2.2px;
+    text-transform:uppercase;
+    color:var(--brown);
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1px;
+    background:var(--gold);
+    display:inline-block;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    padding:14px 26px;
+    border-radius:999px;
+    font-family:'DM Sans', sans-serif;
+    font-weight:600;
+    font-size:15px;
+    cursor:pointer;
+    border:1.5px solid transparent;
+    transition:transform .22s ease, box-shadow .22s ease, background .22s ease, color .22s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-green{background:var(--green); color:var(--cream);}
+  .btn-green:hover{box-shadow:0 8px 22px rgba(62,99,62,0.35); transform:translateY(-2px);}
+  .btn-outline{background:transparent; color:var(--charcoal); border-color:var(--charcoal);}
+  .btn-outline:hover{background:var(--charcoal); color:var(--cream);}
+  .btn-chili{background:var(--chili); color:var(--cream);}
+  .btn-chili:hover{box-shadow:0 8px 22px rgba(184,58,45,0.35); transform:translateY(-2px);}
+  .btn-sm{padding:10px 18px; font-size:13.5px; width:100%;}
+  .btn svg{width:17px; height:17px; flex-shrink:0;}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(247,243,232,0.92);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 24px;
+    max-width:1180px; margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:11px;}
+  .brand img{height:42px; width:42px; border-radius:50%; object-fit:cover; border:1.5px solid var(--line);}
+  .brand-text{display:flex; flex-direction:column; line-height:1.1;}
+  .brand-text b{font-family:'Cormorant Garamond', serif; font-size:22px; font-weight:700; color:var(--charcoal);}
+  .brand-text span{font-size:10px; letter-spacing:1.6px; text-transform:uppercase; color:var(--brown); font-weight:600;}
+
+  nav.links{display:flex; gap:34px; align-items:center;}
+  nav.links a{
+    font-size:14.5px; font-weight:500; color:var(--charcoal);
+    position:relative; padding:4px 0;
+  }
+  nav.links a::after{
+    content:""; position:absolute; left:0; bottom:0; width:0; height:1.5px;
+    background:var(--chili); transition:width .25s ease;
+  }
+  nav.links a:hover::after{width:100%;}
+
+  .header-actions{display:flex; gap:10px; align-items:center;}
+  .header-actions .btn{padding:10px 18px; font-size:13.5px;}
+
+  .menu-toggle{
+    display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px;
+  }
+  .menu-toggle span{width:24px; height:2px; background:var(--charcoal); border-radius:2px; transition:.25s;}
+
+  .mobile-nav{
+    display:none; flex-direction:column; gap:2px;
+    background:var(--cream); border-top:1px solid var(--line);
+    padding:10px 24px 18px;
+  }
+  .mobile-nav a{padding:12px 4px; font-size:16px; font-weight:500; border-bottom:1px solid var(--line);}
+  .mobile-nav.open{display:flex;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:56px 0 80px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; top:-120px; right:-160px;
+    width:420px; height:420px; border-radius:50%;
+    background:radial-gradient(circle, rgba(200,149,37,0.20), transparent 70%);
+    z-index:0;
+  }
+  .hero-inner{
+    display:grid;
+    grid-template-columns:1.05fr 1fr;
+    gap:56px;
+    align-items:center;
+    position:relative; z-index:1;
+  }
+  .hero h1{
+    font-size:clamp(38px, 5.4vw, 62px);
+    line-height:1.06;
+    margin:18px 0 22px;
+    font-style:italic;
+    font-weight:600;
+  }
+  .hero-copy p{
+    font-size:17.5px; line-height:1.65; color:#4a4a3f; max-width:480px;
+  }
+  .proof-line{
+    margin-top:22px;
+    display:flex; flex-wrap:wrap; gap:8px 18px;
+    font-size:13px; font-weight:600; color:var(--green); letter-spacing:0.3px;
+  }
+  .proof-line span{display:inline-flex; align-items:center;}
+  .hero-actions{display:flex; gap:14px; margin-top:34px; flex-wrap:wrap;}
+
+  .hero-media{position:relative;}
+  .hero-media .frame{
+    position:relative;
+    border-radius:26px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:6px solid var(--cream);
+    outline:1.5px solid var(--line);
+  }
+  .hero-media img{width:100%; height:520px; object-fit:cover;}
+  .hero-tag{
+    position:absolute; left:-18px; bottom:28px;
+    background:var(--charcoal); color:var(--cream);
+    padding:16px 20px; border-radius:14px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:15px; line-height:1.35; max-width:220px;
+    box-shadow:0 14px 30px rgba(0,0,0,0.25);
+  }
+  .hero-tag b{display:block; font-size:26px; font-weight:700; color:var(--gold); font-style:italic;}
+
+  /* swatch strip - signature element */
+  .swatch-strip{
+    display:flex; height:10px; width:100%;
+    border-radius:0;
+  }
+  .swatch-strip div{flex:1;}
+
+  /* ---------- SECTION SHARED ---------- */
+  section{padding:88px 0;}
+  .section-head{
+    max-width:640px; margin:0 auto 52px; text-align:center;
+  }
+  .section-head h2{
+    font-size:clamp(30px, 4vw, 44px);
+    margin-top:14px;
+    font-style:italic;
+  }
+  .section-head p{
+    margin-top:16px; font-size:16px; color:#4a4a3f; line-height:1.6;
+  }
+
+  /* ---------- PRODUCTS ---------- */
+  .products{background:var(--cream-2); position:relative;}
+  .product-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:26px;
+  }
+  .product-card{
+    background:var(--cream);
+    border-radius:var(--radius);
+    overflow:hidden;
+    border:1px solid var(--line);
+    display:flex; flex-direction:column;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .product-card:hover{transform:translateY(-6px); box-shadow:var(--shadow);}
+  .product-media{position:relative; aspect-ratio:1/1; overflow:hidden;}
+  .product-media img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
+  .product-card:hover .product-media img{transform:scale(1.06);}
+  .swatch-dot{
+    position:absolute; top:12px; left:12px;
+    width:15px; height:15px; border-radius:50%;
+    border:2px solid var(--cream); box-shadow:0 2px 6px rgba(0,0,0,0.25);
+  }
+  .product-body{padding:18px 18px 20px; display:flex; flex-direction:column; gap:10px; flex:1;}
+  .product-body h3{font-size:21px; font-weight:600;}
+  .product-body p.desc{font-size:13.6px; line-height:1.5; color:#5a5a4d; flex:1;}
+  .price-tag{
+    font-size:12px; font-weight:700; letter-spacing:0.6px; text-transform:uppercase;
+    color:var(--brown);
+  }
+  .product-body .btn{margin-top:6px;}
+
+  /* ---------- STORY ---------- */
+  .story{background:var(--cream);}
+  .story-inner{
+    display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:start;
+  }
+  .story-text p{font-size:16.5px; line-height:1.75; color:#4a4a3f; margin-top:18px;}
+  .team-grid{display:flex; flex-direction:column; gap:22px;}
+  .team-card{
+    display:flex; gap:18px; align-items:center;
+    background:var(--cream-2);
+    border-radius:var(--radius);
+    padding:18px;
+    border:1px solid var(--line);
+  }
+  .team-card img{
+    width:92px; height:92px; border-radius:50%; object-fit:cover;
+    border:3px solid var(--cream);
+    box-shadow:0 6px 16px rgba(0,0,0,0.14);
+    flex-shrink:0;
+  }
+  .team-card h4{font-size:21px; font-weight:700;}
+  .team-role{font-size:12.5px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--chili); margin-top:3px;}
+  .team-edu{font-size:13.5px; color:#5a5a4d; margin-top:5px;}
+  .team-insta{
+    display:inline-flex; align-items:center; gap:6px;
+    margin-top:9px; font-size:13px; font-weight:600; color:var(--green);
+  }
+  .team-insta svg{width:15px; height:15px;}
+  .team-insta:hover{text-decoration:underline;}
+
+  /* ---------- GALLERY ---------- */
+  .gallery{background:var(--cream-2);}
+  .gallery-sub{
+    display:flex; justify-content:center; gap:28px; margin-bottom:36px; flex-wrap:wrap;
+  }
+  .gallery-sub span{
+    font-size:12.5px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; color:var(--brown);
+    display:flex; align-items:center; gap:8px;
+  }
+  .gallery-sub span::before{content:""; width:8px; height:8px; border-radius:50%; background:var(--gold);}
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    grid-auto-rows:190px;
+    gap:14px;
+  }
+  .gallery-grid a{border-radius:14px; overflow:hidden; display:block; position:relative;}
+  .gallery-grid img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
+  .gallery-grid a:hover img{transform:scale(1.08);}
+  .gallery-grid a:nth-child(1){grid-column:span 2; grid-row:span 2;}
+  .gallery-grid a:nth-child(6){grid-column:span 2;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--charcoal); color:var(--cream);}
+  .contact .eyebrow{color:var(--gold);}
+  .contact .section-head h2{color:var(--cream);}
+  .contact .section-head p{color:#cfcabb;}
+  .contact-inner{
+    display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:stretch;
+  }
+  .contact-card{
+    background:rgba(247,243,232,0.06);
+    border:1px solid rgba(247,243,232,0.16);
+    border-radius:var(--radius);
+    padding:34px;
+    display:flex; flex-direction:column; gap:20px;
+  }
+  .contact-row{display:flex; gap:14px; align-items:flex-start;}
+  .contact-row .icon{
+    width:38px; height:38px; border-radius:50%; background:var(--gold); color:var(--charcoal);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .contact-row .icon svg{width:18px; height:18px;}
+  .contact-row h4{color:var(--cream); font-size:17px; font-weight:600; font-family:'DM Sans', sans-serif;}
+  .contact-row p, .contact-row a{font-size:14.5px; color:#d8d4c4; line-height:1.55;}
+  .contact-row a:hover{color:var(--gold);}
+  .contact-actions{display:flex; gap:12px; margin-top:6px; flex-wrap:wrap;}
+  .note-box{
+    margin-top:auto;
+    background:rgba(200,149,37,0.14);
+    border:1px solid rgba(200,149,37,0.4);
+    border-radius:12px;
+    padding:14px 16px;
+    font-size:13.5px;
+    color:#f0dfa8;
+    line-height:1.5;
+  }
+  .map-frame{
+    border-radius:var(--radius);
+    overflow:hidden;
+    border:1px solid rgba(247,243,232,0.16);
+    min-height:340px;
+  }
+  .map-frame iframe{width:100%; height:100%; min-height:340px; border:0; filter:grayscale(0.15) contrast(1.02);}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--charcoal);
+    color:#cfcabb;
+    padding:36px 0 100px;
+    border-top:1px solid rgba(247,243,232,0.1);
+  }
+  .footer-inner{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;
+  }
+  .footer-brand{display:flex; align-items:center; gap:10px;}
+  .footer-brand img{height:32px; width:32px; border-radius:50%; object-fit:cover;}
+  .footer-brand b{font-family:'Cormorant Garamond', serif; font-size:18px; color:var(--cream);}
+  .footer-social{display:flex; gap:16px;}
+  .footer-social a{
+    width:38px; height:38px; border-radius:50%; border:1px solid rgba(247,243,232,0.25);
+    display:flex; align-items:center; justify-content:center; transition:.2s;
+  }
+  .footer-social a:hover{background:var(--gold); border-color:var(--gold); color:var(--charcoal);}
+  .footer-social svg{width:17px; height:17px;}
+  .footer-bottom{
+    text-align:center; margin-top:30px; padding-top:22px;
+    border-top:1px solid rgba(247,243,232,0.08);
+    font-size:12.5px; color:#8f8a78;
+  }
+
+  /* ---------- MOBILE STICKY BAR ---------- */
+  .sticky-bar{
+    position:fixed; bottom:0; left:0; right:0; z-index:200;
+    display:none;
+    background:var(--cream);
+    border-top:1px solid var(--line);
+    box-shadow:0 -8px 24px rgba(0,0,0,0.10);
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    gap:10px;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:1020px){
+    .product-grid{grid-template-columns:repeat(2, 1fr);}
+    .gallery-grid{grid-template-columns:repeat(3,1fr); grid-auto-rows:160px;}
+    .gallery-grid a:nth-child(1){grid-column:span 2; grid-row:span 1;}
+    .gallery-grid a:nth-child(6){grid-column:span 1;}
+    .contact-inner{grid-template-columns:1fr;}
+  }
+
+  @media (max-width:860px){
+    nav.links{display:none;}
+    .header-actions .btn:not(.icon-btn){display:none;}
+    .menu-toggle{display:flex;}
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-media{order:-1;}
+    .hero-media img{height:340px;}
+    .hero-tag{left:12px; bottom:-18px;}
+    .story-inner{grid-template-columns:1fr; gap:40px;}
+    section{padding:64px 0;}
+    .sticky-bar{display:flex;}
+    body{padding-bottom:78px;}
+  }
+
+  @media (max-width:600px){
+    .product-grid{grid-template-columns:repeat(2, 1fr); gap:14px;}
+    .product-body{padding:13px 13px 15px;}
+    .product-body h3{font-size:17px;}
+    .product-body p.desc{font-size:12.5px;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:140px;}
+    .gallery-grid a:nth-child(1){grid-column:span 2;}
+    .gallery-grid a:nth-child(6){grid-column:span 2;}
+    .team-card{flex-direction:column; text-align:center;}
+    .contact-card{padding:24px;}
+    .hero h1{font-size:34px;}
+  }
+
+  :focus-visible{outline:2.5px solid var(--gold); outline-offset:3px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="nav-inner">
+    <a href="#home" class="brand">
+      <img src="https://i.ibb.co/7NzHr1D0/66460.png" alt="FarmToPack logo">
+      <span class="brand-text"><b>FarmToPack</b><span>Gadegaon · Amravati</span></span>
+    </a>
+    <nav class="links">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-outline" href="tel:+919325692210">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call
+      </a>
+      <a class="btn btn-green" href="https://wa.me/919325692210?text=Hello%20FarmToPack%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.93-.26-.1-.46-.15-.65.15-.2.29-.75.93-.92 1.12-.17.2-.34.22-.63.08-.29-.15-1.23-.45-2.34-1.44-.87-.77-1.45-1.72-1.62-2.02-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.08-.15-.65-1.56-.89-2.14-.23-.56-.47-.48-.65-.49-.17-.01-.36-.01-.56-.01-.2 0-.51.07-.78.37-.26.29-1.02 1-1.02 2.43 0 1.43 1.05 2.82 1.19 3.01.15.2 2.06 3.15 5 4.42.7.3 1.24.48 1.67.61.7.22 1.34.19 1.84.12.56-.08 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.37-.07-.12-.26-.2-.55-.34z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.86.5 3.65 1.44 5.22L2 22l4.9-1.43a9.95 9.95 0 0 0 5.12 1.4h.01c5.52 0 10-4.48 10-10s-4.49-9.97-10.01-9.97zm0 18.13h-.01a8.1 8.1 0 0 1-4.14-1.13l-.3-.18-3.08.9.82-3-.19-.31a8.13 8.13 0 0 1-1.25-4.4c0-4.5 3.66-8.16 8.16-8.16 4.5 0 8.16 3.66 8.16 8.17 0 4.5-3.67 8.11-8.17 8.11z"/></svg>
+        WhatsApp
+      </a>
+      <button class="menu-toggle" aria-label="Open menu" onclick="document.querySelector('.mobile-nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav">
+    <a href="#home" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Home</a>
+    <a href="#products" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Products</a>
+    <a href="#story" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Our Story</a>
+    <a href="#contact" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Contact</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">Farm-Based · Gadegaon, Amravati</span>
+      <h1>From Our Farm to<br>Your Pack, Naturally.</h1>
+      <p>Fresh mushrooms and carefully prepared natural powders, packed with care from our farm-based setup in Gadegaon.</p>
+      <div class="proof-line">
+        <span>Farm-based production</span>
+        <span>Direct packing</span>
+        <span>Local roots</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-green" href="https://wa.me/919325692210?text=Hello%20FarmToPack%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.93-.26-.1-.46-.15-.65.15-.2.29-.75.93-.92 1.12-.17.2-.34.22-.63.08-.29-.15-1.23-.45-2.34-1.44-.87-.77-1.45-1.72-1.62-2.02-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.08-.15-.65-1.56-.89-2.14-.23-.56-.47-.48-.65-.49-.17-.01-.36-.01-.56-.01-.2 0-.51.07-.78.37-.26.29-1.02 1-1.02 2.43 0 1.43 1.05 2.82 1.19 3.01.15.2 2.06 3.15 5 4.42.7.3 1.24.48 1.67.61.7.22 1.34.19 1.84.12.56-.08 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.37-.07-.12-.26-.2-.55-.34z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.86.5 3.65 1.44 5.22L2 22l4.9-1.43a9.95 9.95 0 0 0 5.12 1.4h.01c5.52 0 10-4.48 10-10s-4.49-9.97-10.01-9.97zm0 18.13h-.01a8.1 8.1 0 0 1-4.14-1.13l-.3-.18-3.08.9.82-3-.19-.31a8.13 8.13 0 0 1-1.25-4.4c0-4.5 3.66-8.16 8.16-8.16 4.5 0 8.16 3.66 8.16 8.17 0 4.5-3.67 8.11-8.17 8.11z"/></svg>
+          WhatsApp for Enquiry
+        </a>
+        <a class="btn btn-outline" href="tel:+919325692210">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Us
+        </a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="frame">
+        <img src="https://i.ibb.co/zh0Mzy0Y/66461.jpg" alt="Jay and Om at the FarmToPack mushroom farm">
+      </div>
+      <div class="hero-tag"><b>Est. 2025</b>Family-run · packed by hand in Gadegaon</div>
+    </div>
+  </div>
+  <div class="swatch-strip">
+    <div style="background:var(--chili)"></div>
+    <div style="background:var(--gold)"></div>
+    <div style="background:var(--green)"></div>
+    <div style="background:var(--brown)"></div>
+  </div>
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+<section class="products" id="products">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Our Range</span>
+      <h2>Straight From the Farm to Your Kitchen</h2>
+      <p>Every product is prepared and packed from our own setup in Gadegaon — no middlemen, no shortcuts.</p>
+    </div>
+
+    <div class="product-grid">
+
+      <div class="product-card">
+        <div class="product-media">
+          <span class="swatch-dot" style="background:var(--chili)"></span>
+          <img src="https://i.ibb.co/dJBt5Pwx/66417.jpg" alt="Red Chili Powder">
+        </div>
+        <div class="product-body">
+          <h3>Red Chili Powder</h3>
+          <p class="desc">Rich red chili powder for adding colour and flavour to everyday cooking.</p>
+          <span class="price-tag">Price available on enquiry</span>
+          <a class="btn btn-green btn-sm" href="https://wa.me/919325692210?text=Hello%20FarmToPack%2C%20I%20am%20interested%20in%20Red%20Chili%20Powder." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-media">
+          <span class="swatch-dot" style="background:var(--green)"></span>
+          <img src="https://i.ibb.co/YBTBVxrT/66424.jpg" alt="Moringa Powder">
+        </div>
+        <div class="product-body">
+          <h3>Moringa Powder</h3>
+          <p class="desc">Finely prepared moringa powder for convenient everyday use.</p>
+          <span class="price-tag">Price available on enquiry</span>
+          <a class="btn btn-green btn-sm" href="https://wa.me/919325692210?text=Hello%20FarmToPack%2C%20I%20am%20interested%20in%20Moringa%20Powder." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-media">
+          <span class="swatch-dot" style="background:var(--gold)"></span>
+          <img src="https://i.ibb.co/sd95kCYR/66418.jpg" alt="Turmeric Powder">
+        </div>
+        <div class="product-body">
+          <h3>Turmeric Powder</h3>
+          <p class="desc">Bright and aromatic turmeric powder for everyday cooking.</p>
+          <span class="price-tag">Price available on enquiry</span>
+          <a class="btn btn-green btn-sm" href="https://wa.me/919325692210?text=Hello%20FarmToPack%2C%20I%20am%20interested%20in%20Turmeric%20Powder." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-media">
+          <span class="swatch-dot" style="background:var(--brown)"></span>
+          <img src="https://i.ibb.co/7JgNV4R7/66423.jpg" alt="Fresh Oyster Mushroom">
+        </div>
+        <div class="product-body">
+          <h3>Fresh Oyster Mushroom</h3>
+          <p class="desc">Fresh oyster mushrooms prepared with care for everyday cooking.</p>
+          <span class="price-tag">Price available on enquiry</span>
+          <a class="btn btn-green btn-sm" href="https://wa.me/919325692210?text=Hello%20FarmToPack%2C%20I%20am%20interested%20in%20Fresh%20Oyster%20Mushroom." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-media">
+          <span class="swatch-dot" style="background:var(--brown)"></span>
+          <img src="https://i.ibb.co/zHxFnRYX/66422.jpg" alt="Dry Mushroom">
+        </div>
+        <div class="product-body">
+          <h3>Dry Mushroom</h3>
+          <p class="desc">Convenient dried mushrooms for longer storage and easy use.</p>
+          <span class="price-tag">Price available on enquiry</span>
+          <a class="btn btn-green btn-sm" href="https://wa.me/919325692210?text=Hello%20FarmToPack%2C%20I%20am%20interested%20in%20Dry%20Mushroom." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-media">
+          <span class="swatch-dot" style="background:var(--brown)"></span>
+          <img src="https://i.ibb.co/Hf3cWFTb/66420.jpg" alt="Mushroom Powder">
+        </div>
+        <div class="product-body">
+          <h3>Mushroom Powder</h3>
+          <p class="desc">Fine mushroom powder made for convenient everyday use.</p>
+          <span class="price-tag">Price available on enquiry</span>
+          <a class="btn btn-green btn-sm" href="https://wa.me/919325692210?text=Hello%20FarmToPack%2C%20I%20am%20interested%20in%20Mushroom%20Powder." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-media">
+          <span class="swatch-dot" style="background:#E4D9B0"></span>
+          <img src="https://i.ibb.co/Txftn6m9/66419.jpg" alt="Onion Powder">
+        </div>
+        <div class="product-body">
+          <h3>Onion Powder</h3>
+          <p class="desc">Convenient onion powder for seasoning and quick recipes.</p>
+          <span class="price-tag">Price available on enquiry</span>
+          <a class="btn btn-green btn-sm" href="https://wa.me/919325692210?text=Hello%20FarmToPack%2C%20I%20am%20interested%20in%20Onion%20Powder." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-media">
+          <span class="swatch-dot" style="background:var(--green)"></span>
+          <img src="https://i.ibb.co/mPbKGzL/66425.jpg" alt="Neem Powder">
+        </div>
+        <div class="product-body">
+          <h3>Neem Powder</h3>
+          <p class="desc">Carefully prepared neem powder for traditional and practical uses.</p>
+          <span class="price-tag">Price available on enquiry</span>
+          <a class="btn btn-green btn-sm" href="https://wa.me/919325692210?text=Hello%20FarmToPack%2C%20I%20am%20interested%20in%20Neem%20Powder." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORY ================= -->
+<section class="story" id="story">
+  <div class="wrap story-inner">
+    <div class="story-text">
+      <span class="eyebrow">Our Story</span>
+      <h2>Grown Close to Home.<br>Packed With Care.</h2>
+      <p>FarmToPack is a newly started farm-based business from Gadegaon, Warud, Amravati. Jay Rajendra Nikam leads FarmToPack, bringing technical expertise, while Om Rajendra Nikam manages production and manufacturing with practical engineering skills. Together, the family works from their own setup to prepare and pack fresh products with direct customer connection.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="https://i.ibb.co/bRqVGLCS/66444.jpg" alt="Jay Rajendra Nikam">
+        <div>
+          <h4>Jay Rajendra Nikam</h4>
+          <div class="team-role">Founder &amp; Owner</div>
+          <div class="team-edu">Software Engineer (CSE)</div>
+          <a class="team-insta" href="https://www.instagram.com/jay_nikam9325" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            @jay_nikam9325
+          </a>
+        </div>
+      </div>
+      <div class="team-card">
+        <img src="https://i.ibb.co/zWv8PWj4/66446.jpg" alt="Om Rajendra Nikam">
+        <div>
+          <h4>Om Rajendra Nikam</h4>
+          <div class="team-role">Manufacturer &amp; Producer</div>
+          <div class="team-edu">Solar Technician</div>
+          <a class="team-insta" href="https://www.instagram.com/omnikam_1x" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            @omnikam_1x
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The Farm</span>
+      <h2>See Where the Journey Begins</h2>
+    </div>
+    <div class="gallery-sub">
+      <span>Mushroom Farm</span>
+      <span>Selling &amp; Customer Interaction</span>
+    </div>
+    <div class="gallery-grid">
+      <a href="https://i.ibb.co/x8gHJCdQ/1038.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/x8gHJCdQ/1038.jpg" alt="Mushroom farm photo 1" loading="lazy"></a>
+      <a href="https://i.ibb.co/twFjR5qD/1035.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/twFjR5qD/1035.jpg" alt="Mushroom farm photo 2" loading="lazy"></a>
+      <a href="https://i.ibb.co/ZRLpfY82/1033.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/ZRLpfY82/1033.jpg" alt="Mushroom farm photo 3" loading="lazy"></a>
+      <a href="https://i.ibb.co/qF3LyzdS/1047.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/qF3LyzdS/1047.jpg" alt="Mushroom farm photo 4" loading="lazy"></a>
+      <a href="https://i.ibb.co/S7d3kFwC/997.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/S7d3kFwC/997.jpg" alt="Customer interaction photo 1" loading="lazy"></a>
+      <a href="https://i.ibb.co/Vc7g8WBJ/998.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/Vc7g8WBJ/998.jpg" alt="Customer interaction photo 2" loading="lazy"></a>
+      <a href="https://i.ibb.co/0VYCkMWR/1037.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/0VYCkMWR/1037.jpg" alt="Customer interaction photo 3" loading="lazy"></a>
+      <a href="https://i.ibb.co/R5Lr5cT/1048.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/R5Lr5cT/1048.jpg" alt="Customer interaction photo 4" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Let's Talk About Your Order</h2>
+      <p>We're happy to answer questions about our products, packing, and availability.</p>
+    </div>
+
+    <div class="contact-inner">
+      <div class="contact-card">
+        <div class="contact-row">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div>
+            <h4>Address</h4>
+            <p>FarmToPack<br>At. Post Gadegaon, Tal. Warud, Dist. Amravati, Maharashtra, India</p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div>
+            <h4>Phone</h4>
+            <p><a href="tel:+919325692210">+91 93256 92210</a><br><a href="tel:+919420055259">+91 94200 55259</a></p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" fill="none" stroke="none"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></span>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:jaynikamjay@gmail.com">jaynikamjay@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-chili" href="https://wa.me/919325692210?text=Hello%20FarmToPack%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener">WhatsApp Us</a>
+          <a class="btn btn-outline" style="border-color:rgba(247,243,232,0.4); color:var(--cream);" href="tel:+919325692210">Call Now</a>
+        </div>
+        <div class="note-box">Home-based business — please contact us on WhatsApp or Call before visiting.</div>
+      </div>
+
+      <div class="map-frame">
+        <iframe src="https://maps.google.com/maps?q=Gadegaon%2C%20Taluka%20Warud%2C%20District%20Amravati%2C%20Maharashtra%2C%20India&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="FarmToPack location map"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="https://i.ibb.co/7NzHr1D0/66460.png" alt="FarmToPack logo">
+        <b>FarmToPack</b>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/jay_nikam9325" target="_blank" rel="noopener" aria-label="Jay's Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.instagram.com/omnikam_1x" target="_blank" rel="noopener" aria-label="Om's Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="mailto:jaynikamjay@gmail.com" aria-label="Email FarmToPack">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FarmToPack, Gadegaon, Warud, Amravati. All rights reserved.</p>
+      <p style="margin-top:6px;">built with ❤️ by 21.coders</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= MOBILE STICKY BAR ================= -->
+<div class="sticky-bar">
+  <a class="btn btn-outline btn-sm" href="tel:+919325692210">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call
+  </a>
+  <a class="btn btn-green btn-sm" href="https://wa.me/919325692210?text=Hello%20FarmToPack%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.93-.26-.1-.46-.15-.65.15-.2.29-.75.93-.92 1.12-.17.2-.34.22-.63.08-.29-.15-1.23-.45-2.34-1.44-.87-.77-1.45-1.72-1.62-2.02-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.08-.15-.65-1.56-.89-2.14-.23-.56-.47-.48-.65-.49-.17-.01-.36-.01-.56-.01-.2 0-.51.07-.78.37-.26.29-1.02 1-1.02 2.43 0 1.43 1.05 2.82 1.19 3.01.15.2 2.06 3.15 5 4.42.7.3 1.24.48 1.67.61.7.22 1.34.19 1.84.12.56-.08 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.37-.07-.12-.26-.2-.55-.34z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.86.5 3.65 1.44 5.22L2 22l4.9-1.43a9.95 9.95 0 0 0 5.12 1.4h.01c5.52 0 10-4.48 10-10s-4.49-9.97-10.01-9.97zm0 18.13h-.01a8.1 8.1 0 0 1-4.14-1.13l-.3-.18-3.08.9.82-3-.19-.31a8.13 8.13 0 0 1-1.25-4.4c0-4.5 3.66-8.16 8.16-8.16 4.5 0 8.16 3.66 8.16 8.17 0 4.5-3.67 8.11-8.17 8.11z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<script>
+  // Close mobile menu on outside click
+  document.addEventListener('click', function(e){
+    const nav = document.querySelector('.mobile-nav');
+    const toggle = document.querySelector('.menu-toggle');
+    if(nav.classList.contains('open') && !nav.contains(e.target) && !toggle.contains(e.target)){
+      nav.classList.remove('open');
+    }
+  });
+</script>
+
+</body>
+</html>
