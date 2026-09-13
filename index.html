@@ -149,8 +149,18 @@
   .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
   .product-media {
     position: relative; aspect-ratio: 1/1; overflow: hidden; background: #eae4d0;
+    cursor: zoom-in;
   }
-  .product-media img { width: 100%; height: 100%; object-fit: cover; }
+  .product-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+  .product-media:hover img { transform: scale(1.05); }
+  
+  .zoom-hint {
+    position: absolute; bottom: 8px; right: 8px;
+    background: rgba(37,37,31,0.65); color: #fff;
+    font-size: 10px; font-weight: 600; padding: 3px 8px;
+    border-radius: 999px; pointer-events: none;
+    display: flex; align-items: center; gap: 4px;
+  }
   .save-badge {
     position: absolute; top: 10px; left: 10px;
     background: var(--green-dark); color: #fff;
@@ -186,6 +196,28 @@
     color: var(--green-dark); font-size: 16px; font-weight: 700;
   }
   .qty-stepper .qty-val { font-weight: 700; font-size: 14px; color: var(--green-dark); }
+
+  /* Image HD Modal */
+  .img-modal {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 300;
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px; opacity: 0; pointer-events: none; transition: opacity .25s ease;
+  }
+  .img-modal.open { opacity: 1; pointer-events: auto; }
+  .modal-content {
+    position: relative; max-width: 90vw; max-height: 85vh; display: flex; flex-direction: column; align-items: center;
+  }
+  .modal-content img {
+    max-width: 100%; max-height: 75vh; border-radius: 12px; object-fit: contain;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  }
+  .modal-title {
+    color: #fff; font-size: 16px; margin-top: 14px; font-weight: 600; text-align: center;
+  }
+  .modal-close {
+    position: absolute; top: -45px; right: -10px; color: #fff;
+    background: transparent; font-size: 32px; font-weight: 700;
+  }
 
   /* Story & Gallery */
   .story { background: var(--cream); }
@@ -389,6 +421,15 @@
   </div>
 </section>
 
+<!-- HD Image Modal -->
+<div class="img-modal" id="imgModal" onclick="closeImgModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeImgModal(null, true)">✕</button>
+    <img id="modalImg" src="" alt="HD Image">
+    <div class="modal-title" id="modalTitle"></div>
+  </div>
+</div>
+
 <!-- Cart Drawer -->
 <div class="overlay" id="overlay" onclick="closeCart()"></div>
 <aside class="cart-drawer" id="cart-drawer">
@@ -554,9 +595,10 @@
       const directMsg = encodeURIComponent(`Hello FarmToPack, I want to directly order:\n*${p.title} (${p.weight})* - ₹${p.offer}\nPlease share delivery and payment details.`);
       return `
         <div class="product-card">
-          <div class="product-media">
+          <div class="product-media" onclick="openImgModal('${p.img}', '${p.title}')" title="Click to see large photo">
             <span class="save-badge">SAVE ₹${saved}</span>
             <img src="${p.img}" alt="${p.title}" loading="lazy">
+            <div class="zoom-hint">🔍 View HD</div>
           </div>
           <div class="product-body">
             <h3>${p.title}</h3>
@@ -577,6 +619,18 @@
         </div>
       `;
     }).join('');
+  }
+
+  function openImgModal(src, title) {
+    document.getElementById('modalImg').src = src;
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('imgModal').classList.add('open');
+  }
+
+  function closeImgModal(e, force = false) {
+    if (force || (e && e.target.id === 'imgModal')) {
+      document.getElementById('imgModal').classList.remove('open');
+    }
   }
 
   function renderCardFoot(id) {
@@ -720,3 +774,5 @@ Please confirm my order`;
 
 </body>
 </html>
+
+    
