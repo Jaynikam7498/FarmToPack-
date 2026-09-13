@@ -3,38 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FarmToPack — From Our Farm to Your Pack, Naturally</title>
-<meta name="description" content="FarmToPack: Farm-direct organic spices, powders and dried mushrooms from Gadegaon, Warud, Amravati. Order via WhatsApp or Email.">
-<link rel="icon" href="https://i.ibb.co/4wN53yjT/66460.png">
+<title>FarmToPack — Fresh, Natural Products, Packed Directly from Our Farm</title>
+<meta name="description" content="FarmToPack — farm-based mushrooms and natural powders, prepared and packed directly from our farm in Gadegaon, Warud, Amravati.">
+<link rel="icon" href="https://i.ibb.co/7NzHr1D0/66460.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --green-900: #1e4d2b;
-    --green-700: #2d6a4f;
-    --green-600: #3a7d5e;
+    --cream: #F7F3E8;
+    --charcoal: #25251F;
+    --green: #2d6a4f;
+    --green-dark: #1e4d2b;
+    --brown: #7A5638;
+    --chili: #B83A2D;
+    --gold: #C89525;
+    --cream-2: #EFE8D4;
+    --line: rgba(37,37,31,0.14);
+    --shadow: 0 10px 30px rgba(37,37,31,0.08);
+    --radius: 18px;
     --white: #ffffff;
-    --mint: #f4fbf7;
-    --ink: #1f2937;
-    --ink-soft: #4b5768;
-    --line: #dfeee6;
-    --gold: #c8880f;
-    --danger: #b6412a;
-    --shadow-sm: 0 2px 10px rgba(30,77,43,0.08);
-    --shadow-md: 0 10px 30px rgba(30,77,43,0.12);
-    --shadow-lg: 0 20px 50px rgba(30,77,43,0.18);
-    --radius-card: 18px;
-    --radius-pill: 999px;
-    --maxw: 1180px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
+    background: var(--cream);
+    color: var(--charcoal);
     font-family: 'DM Sans', sans-serif;
-    color: var(--ink);
-    background: var(--white);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
@@ -44,663 +40,243 @@
   button { cursor: pointer; border: none; }
   h1, h2, h3, h4 {
     font-family: 'Cormorant Garamond', serif;
-    color: var(--green-900);
     font-weight: 600;
-    line-height: 1.12;
+    color: var(--charcoal);
   }
-  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
   section { padding: 64px 0; }
+
   .eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    font-size: 0.82rem;
-    letter-spacing: 0.02em;
-    color: var(--green-700);
-    background: var(--mint);
-    border: 1px solid var(--line);
-    padding: 7px 16px;
-    border-radius: var(--radius-pill);
+    gap: 10px;
+    font-size: 12.5px;
     font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--brown);
   }
   .eyebrow::before {
     content: "";
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--green-700);
-    flex-shrink: 0;
+    width: 22px; height: 1px;
+    background: var(--gold);
   }
-  .section-head { max-width: 640px; margin-bottom: 36px; }
-  .section-head p { color: var(--ink-soft); font-size: 1.02rem; margin-top: 12px; line-height: 1.6; }
 
   /* Header */
   header.site-header {
-    position: sticky;
-    top: 0;
-    z-index: 60;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(14px) saturate(160%);
-    -webkit-backdrop-filter: blur(14px) saturate(160%);
-    border-bottom: 1px solid rgba(223,238,230,0.9);
-    transition: box-shadow .25s ease;
-  }
-  header.site-header.scrolled {
-    box-shadow: 0 6px 24px rgba(30,77,43,0.10);
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(247,243,232,0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
   }
   .header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
+    display: flex; align-items: center; justify-content: space-between;
     padding: 12px 20px;
   }
-  .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .brand { display: flex; align-items: center; gap: 11px; }
   .brand img {
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    min-height: 44px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--green-900);
-    flex-shrink: 0;
-    background: var(--mint);
+    height: 42px; width: 42px; border-radius: 50%; object-fit: cover;
+    border: 1.5px solid var(--line);
   }
-  .brand-text { min-width: 0; overflow: hidden; }
-  .brand-text .name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.45rem;
-    font-weight: 700;
-    color: var(--green-900);
-    line-height: 1.05;
-    white-space: nowrap;
-  }
-  .brand-text .sub {
-    font-size: 0.72rem;
-    color: var(--ink-soft);
-    letter-spacing: 0.03em;
-  }
+  .brand-text b { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; }
+  .brand-text span { font-size: 10px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--brown); font-weight: 600; display: block; }
+  
   nav.main-nav { display: flex; gap: 28px; }
-  nav.main-nav a {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--ink);
-    position: relative;
-    padding: 4px 0;
-  }
-  nav.main-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 0;
-    height: 2px;
-    background: var(--green-700);
-    transition: width .2s ease;
-  }
-  nav.main-nav a:hover::after { width: 100%; }
+  nav.main-nav a { font-size: 14.5px; font-weight: 500; color: var(--charcoal); }
+  nav.main-nav a:hover { color: var(--green); }
+
   .header-actions { display: flex; align-items: center; gap: 10px; }
   .icon-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    border: 1px solid var(--line);
-    background: var(--white);
-    color: var(--green-900);
-    transition: transform .15s ease, background .15s ease;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 1px solid var(--line); background: var(--white); color: var(--charcoal);
     position: relative;
   }
-  .icon-btn:hover { background: var(--mint); transform: translateY(-1px); }
-  .icon-btn svg { width: 19px; height: 19px; }
   .cart-count {
-    position: absolute;
-    top: -6px;
-    right: -6px;
-    background: var(--green-900);
-    color: #fff;
-    font-size: 0.68rem;
-    font-weight: 700;
-    min-width: 19px;
-    height: 19px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 2px;
+    position: absolute; top: -5px; right: -5px;
+    background: var(--green-dark); color: #fff;
+    font-size: 11px; font-weight: 700;
+    min-width: 18px; height: 18px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
     border: 2px solid var(--white);
   }
-  .header-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 9px 16px;
-    border-radius: var(--radius-pill);
-    font-size: 0.85rem;
-    font-weight: 600;
-    white-space: nowrap;
-  }
-  .header-cta.call {
-    border: 1.5px solid var(--green-900);
-    color: var(--green-900);
-    background: var(--white);
-  }
-  .header-cta.call:hover { background: var(--mint); }
-  .header-cta.wa {
-    background: var(--green-900);
-    color: #fff;
-    border: 1.5px solid var(--green-900);
-  }
-  .header-cta.wa:hover { background: var(--green-700); }
 
   /* Hero */
-  .hero {
-    padding: 56px 0 60px;
-    background: radial-gradient(120% 100% at 100% 0%, var(--mint) 0%, #ffffff 55%);
-  }
-  .hero .wrap {
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 52px;
-    align-items: center;
+  .hero { position: relative; padding: 50px 0 70px; }
+  .hero-inner {
+    display: grid; grid-template-columns: 1.05fr 0.95fr;
+    gap: 48px; align-items: center;
   }
   .hero-copy h1 {
-    font-size: clamp(2.1rem, 4.2vw, 3.35rem);
-    margin: 18px 0 20px;
-    letter-spacing: -0.01em;
+    font-size: clamp(34px, 4.8vw, 56px);
+    line-height: 1.1; margin: 16px 0 20px; font-style: italic;
   }
-  .hero-copy p.lead {
-    font-size: 1.08rem;
-    color: var(--ink-soft);
-    line-height: 1.7;
-    max-width: 52ch;
-    margin-bottom: 26px;
-  }
-  .trust-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 22px;
-    margin-bottom: 30px;
-  }
-  .trust-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.88rem;
-    color: var(--green-900);
-    font-weight: 600;
-  }
-  .trust-item svg { width: 17px; height: 17px; flex-shrink: 0; color: var(--green-700); }
+  .hero-copy p { font-size: 17px; line-height: 1.65; color: #4a4a3f; max-width: 480px; }
+  .hero-actions { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+
   .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 15px 30px;
-    border-radius: var(--radius-pill);
-    font-weight: 700;
-    font-size: 0.98rem;
-    border: 1.5px solid transparent;
-    transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 12px 24px; border-radius: 999px; font-weight: 600; font-size: 14.5px;
+    transition: all .2s ease; white-space: nowrap;
   }
-  .btn-primary {
-    background: var(--green-900);
-    color: #fff;
-    box-shadow: var(--shadow-sm);
+  .btn-green { background: var(--green); color: #fff; }
+  .btn-green:hover { background: var(--green-dark); }
+  .btn-outline { background: transparent; border: 1.5px solid var(--charcoal); color: var(--charcoal); }
+  .btn-outline:hover { background: var(--charcoal); color: #fff; }
+  
+  .hero-media .frame {
+    border-radius: 24px; overflow: hidden; box-shadow: var(--shadow);
+    border: 6px solid var(--cream); outline: 1.5px solid var(--line);
   }
-  .btn-primary:hover {
-    background: var(--green-700);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-  }
-  .btn-outline {
-    border-color: var(--green-900);
-    color: var(--green-900);
-    background: transparent;
-  }
-  .btn-outline:hover { background: var(--mint); }
-  .hero-cta-row { display: flex; flex-wrap: wrap; gap: 14px; }
-  .hero-visual { position: relative; }
-  .hero-visual .frame {
-    border-radius: 26px;
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    aspect-ratio: 4/4.6;
-    position: relative;
-    background: var(--mint);
-  }
-  .hero-visual img { width: 100%; height: 100%; object-fit: cover; }
-  .hero-badge {
-    position: absolute;
-    left: -18px;
-    bottom: 26px;
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: var(--shadow-md);
-    padding: 14px 18px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    max-width: 230px;
-  }
-  .hero-badge .dot {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--mint);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    color: var(--green-700);
-  }
-  .hero-badge .dot svg { width: 20px; height: 20px; }
-  .hero-badge strong { display: block; font-size: 0.86rem; color: var(--green-900); }
-  .hero-badge span { font-size: 0.76rem; color: var(--ink-soft); }
+  .hero-media img { width: 100%; height: 460px; object-fit: cover; }
 
   /* Products */
-  .products { background: var(--white); }
+  .products { background: var(--cream-2); }
+  .section-head { max-width: 640px; margin: 0 auto 44px; text-align: center; }
+  .section-head h2 { font-size: clamp(28px, 3.8vw, 42px); margin-top: 10px; font-style: italic; }
+  .section-head p { margin-top: 12px; font-size: 15px; color: #5a5a4d; }
+
   .product-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px;
   }
-  .card {
-    border: 1px solid var(--line);
-    border-radius: var(--radius-card);
-    overflow: hidden;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    transition: box-shadow .2s ease, transform .2s ease;
-    position: relative;
+  .product-card {
+    background: var(--white); border-radius: var(--radius);
+    overflow: hidden; border: 1px solid var(--line);
+    display: flex; flex-direction: column;
+    transition: transform .2s ease, box-shadow .2s ease;
   }
-  .card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
-  .card-media {
-    aspect-ratio: 1/1;
-    background: var(--mint);
-    position: relative;
-    overflow: hidden;
+  .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .product-media {
+    position: relative; aspect-ratio: 1/1; overflow: hidden; background: #eae4d0;
   }
-  .card-media img { width: 100%; height: 100%; object-fit: cover; }
+  .product-media img { width: 100%; height: 100%; object-fit: cover; }
   .save-badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: var(--green-900);
-    color: #fff;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    padding: 5px 10px;
-    border-radius: var(--radius-pill);
-    z-index: 2;
+    position: absolute; top: 10px; left: 10px;
+    background: var(--green-dark); color: #fff;
+    font-size: 11px; font-weight: 700; padding: 4px 9px;
+    border-radius: 999px;
   }
-  .card-body { padding: 14px 14px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
-  .card-title {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 600;
-    font-size: 0.92rem;
-    color: var(--ink);
-    line-height: 1.35;
-    min-height: 2.6em;
+  .product-body { padding: 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .product-body h3 { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; min-height: 2.5em; line-height: 1.3; }
+  .card-weight { font-size: 12.5px; color: #6a6a5d; }
+  .price-row { display: flex; align-items: baseline; gap: 8px; margin: 2px 0 8px; }
+  .price-offer { font-size: 18px; font-weight: 700; color: var(--green-dark); }
+  .price-mrp { font-size: 13px; color: #8f8a78; text-decoration: line-through; }
+
+  .card-actions-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: auto;
   }
-  .card-weight { font-size: 0.78rem; color: var(--ink-soft); }
-  .price-row { display: flex; align-items: baseline; gap: 8px; margin-top: 2px; }
-  .price-offer { font-size: 1.2rem; font-weight: 700; color: var(--green-900); }
-  .price-mrp { font-size: 0.85rem; color: #9aa4af; text-decoration: line-through; }
-  .card-foot { margin-top: auto; padding-top: 8px; }
-  .add-btn {
-    width: 100%;
-    padding: 11px;
-    border-radius: 12px;
-    background: var(--green-900);
-    color: #fff;
-    font-weight: 700;
-    font-size: 0.88rem;
-    transition: background .15s ease;
+  .add-cart-btn {
+    padding: 9px 8px; border-radius: 10px; background: var(--green-dark);
+    color: #fff; font-weight: 600; font-size: 13px; width: 100%;
   }
-  .add-btn:hover { background: var(--green-700); }
+  .direct-wa-btn {
+    padding: 9px 8px; border-radius: 10px; background: #25D366;
+    color: #fff; font-weight: 600; font-size: 13px; text-align: center;
+    display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+  }
   .qty-stepper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 1.5px solid var(--green-900);
-    border-radius: 12px;
-    overflow: hidden;
-    background: var(--mint);
+    display: flex; align-items: center; justify-content: space-between;
+    border: 1.5px solid var(--green-dark); border-radius: 10px;
+    overflow: hidden; background: #f0f7f2;
   }
   .qty-stepper button {
-    width: 38px;
-    height: 38px;
-    background: transparent;
-    color: var(--green-900);
-    font-size: 1.1rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 32px; height: 34px; background: transparent;
+    color: var(--green-dark); font-size: 16px; font-weight: 700;
   }
-  .qty-stepper button:hover { background: rgba(30,77,43,0.08); }
-  .qty-stepper .qty-val { font-weight: 700; color: var(--green-900); font-size: 0.95rem; }
+  .qty-stepper .qty-val { font-weight: 700; font-size: 14px; color: var(--green-dark); }
 
-  /* Story */
-  .story { background: var(--mint); }
-  .story .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-  .story-copy p { color: var(--ink-soft); line-height: 1.8; font-size: 1.02rem; margin-bottom: 16px; }
-  .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  /* Story & Gallery */
+  .story { background: var(--cream); }
+  .story-inner { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 50px; align-items: start; }
+  .team-grid { display: flex; flex-direction: column; gap: 18px; }
   .team-card {
-    background: #fff;
-    border-radius: var(--radius-card);
-    overflow: hidden;
-    border: 1px solid var(--line);
-    box-shadow: var(--shadow-sm);
+    display: flex; gap: 16px; align-items: center; background: var(--cream-2);
+    border-radius: var(--radius); padding: 16px; border: 1px solid var(--line);
   }
-  .team-card .photo { aspect-ratio: 1/1; overflow: hidden; background: var(--mint); }
-  .team-card .photo img { width: 100%; height: 100%; object-fit: cover; }
-  .team-card .info { padding: 16px; }
-  .team-card .info .name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--green-900); }
-  .team-card .info .role { font-size: 0.8rem; color: var(--ink-soft); margin: 4px 0 10px; line-height: 1.4; }
-  .ig-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--green-700);
-  }
-  .ig-link svg { width: 15px; height: 15px; }
-
-  /* Gallery */
-  .gallery { background: #fff; }
+  .team-card img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
+  
+  .gallery { background: var(--cream-2); }
   .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 150px;
-    gap: 14px;
+    display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 160px; gap: 12px;
   }
-  .gallery-grid a {
-    border-radius: 14px;
-    overflow: hidden;
-    position: relative;
-    display: block;
-  }
-  .gallery-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
-  .gallery-grid a:hover img { transform: scale(1.05); }
-  .gallery-grid a:nth-child(1), .gallery-grid a:nth-child(6) { grid-row: span 2; }
+  .gallery-grid a { border-radius: 14px; overflow: hidden; display: block; }
+  .gallery-grid img { width: 100%; height: 100%; object-fit: cover; }
+  .gallery-grid a:nth-child(1), .gallery-grid a:nth-child(6) { grid-column: span 2; }
 
   /* Contact */
-  .contact { background: var(--mint); }
-  .contact .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: stretch; }
+  .contact { background: var(--charcoal); color: var(--cream); }
+  .contact h2 { color: var(--cream); }
+  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
   .contact-card {
-    background: #fff;
-    border: 1px solid var(--line);
-    border-radius: var(--radius-card);
-    padding: 28px;
-    box-shadow: var(--shadow-sm);
+    background: rgba(247,243,232,0.06); border: 1px solid rgba(247,243,232,0.16);
+    border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; gap: 16px;
   }
-  .contact-row { display: flex; gap: 14px; margin-bottom: 20px; }
-  .contact-row:last-child { margin-bottom: 0; }
-  .contact-row .ic {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--mint);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    color: var(--green-700);
-  }
-  .contact-row .ic svg { width: 18px; height: 18px; }
-  .contact-row .label { font-size: 0.78rem; color: var(--ink-soft); margin-bottom: 2px; }
-  .contact-row .val { font-weight: 600; font-size: 0.95rem; color: var(--ink); }
-  .map-frame {
-    border-radius: var(--radius-card);
-    overflow: hidden;
-    border: 1px solid var(--line);
-    box-shadow: var(--shadow-sm);
-    min-height: 340px;
-  }
-  .map-frame iframe { width: 100%; height: 100%; min-height: 340px; border: 0; display: block; }
-
-  /* Footer */
-  footer { background: var(--green-900); color: #eaf3ec; padding: 48px 0 100px; }
-  .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 36px; }
-  .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-  .footer-brand img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.5); }
-  .footer-brand .name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: #fff; }
-  footer p { color: #c6dccb; font-size: 0.9rem; line-height: 1.6; max-width: 34ch; }
-  footer h4 { color: #fff; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; letter-spacing: 0.03em; margin-bottom: 14px; font-weight: 700; }
-  footer ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  footer ul a { color: #c6dccb; font-size: 0.9rem; }
-  footer ul a:hover { color: #fff; }
-  .footer-social { display: flex; gap: 10px; margin-top: 16px; }
-  .footer-social a {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.28);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-  }
-  .footer-social a:hover { background: rgba(255,255,255,0.12); }
-  .footer-social svg { width: 16px; height: 16px; }
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.16);
-    margin-top: 36px;
-    padding-top: 20px;
-    font-size: 0.82rem;
-    color: #a9c7b0;
-    text-align: center;
-  }
-
-  /* Mobile bottom bar */
-  .mobile-bar {
-    display: none;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 70;
-    background: #fff;
-    border-top: 1px solid var(--line);
-    box-shadow: 0 -8px 24px rgba(30,77,43,0.12);
-    padding: 10px 14px;
-    gap: 10px;
-  }
-  .mobile-bar a {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 13px;
-    border-radius: 14px;
-    font-weight: 700;
-    font-size: 0.9rem;
-  }
-  .mobile-bar .m-call { border: 1.5px solid var(--green-900); color: var(--green-900); }
-  .mobile-bar .m-wa { background: var(--green-900); color: #fff; }
 
   /* Cart Drawer */
   .overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(15,30,20,0.45);
-    z-index: 90;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .25s ease;
-    backdrop-filter: blur(2px);
+    position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 200;
+    opacity: 0; pointer-events: none; transition: opacity .25s ease;
   }
   .overlay.open { opacity: 1; pointer-events: auto; }
   .cart-drawer {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: min(430px, 100vw);
-    background: #fff;
-    z-index: 95;
-    display: flex;
-    flex-direction: column;
-    transform: translateX(100%);
-    transition: transform .3s cubic-bezier(.22,.61,.36,1);
-    box-shadow: -14px 0 40px rgba(0,0,0,0.18);
+    position: fixed; top: 0; right: 0; bottom: 0; width: min(420px, 100vw);
+    background: #fff; z-index: 205; display: flex; flex-direction: column;
+    transform: translateX(100%); transition: transform .3s ease;
   }
   .cart-drawer.open { transform: translateX(0); }
   .cart-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 20px; border-bottom: 1px solid var(--line);
   }
-  .cart-head h3 { font-size: 1.4rem; }
-  .cart-close {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    font-size: 1.2rem;
-  }
-  .cart-close:hover { background: var(--mint); }
   .cart-body { flex: 1; overflow-y: auto; padding: 16px 20px; }
-  .cart-empty { text-align: center; padding: 60px 10px; color: var(--ink-soft); }
-  .cart-empty svg { width: 56px; height: 56px; color: var(--line); margin: 0 auto 14px; }
   .cart-item {
-    display: grid;
-    grid-template-columns: 56px 1fr auto;
-    gap: 12px;
-    align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
+    display: grid; grid-template-columns: 50px 1fr auto; gap: 10px;
+    align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line);
   }
-  .cart-item img { width: 56px; height: 56px; border-radius: 10px; object-fit: cover; background: var(--mint); }
-  .cart-item .ci-title { font-size: 0.86rem; font-weight: 600; line-height: 1.3; margin-bottom: 4px; }
-  .cart-item .ci-sub { font-size: 0.78rem; color: var(--ink-soft); }
-  .cart-item .ci-stepper {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 4px 6px;
-  }
-  .cart-item .ci-stepper button {
-    width: 22px;
-    height: 22px;
-    border: none;
-    background: var(--mint);
-    border-radius: 6px;
-    color: var(--green-900);
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .ci-price-col { text-align: right; }
-  .ci-remove { font-size: 0.72rem; color: var(--danger); margin-top: 6px; display: inline-block; font-weight: 600; }
-
-  .cart-form { margin-top: 18px; display: flex; flex-direction: column; gap: 12px; }
-  .cart-form label { font-size: 0.8rem; font-weight: 600; color: var(--ink); margin-bottom: 4px; display: block; }
+  .cart-item img { width: 50px; height: 50px; border-radius: 8px; object-fit: cover; }
+  .cart-summary { padding: 16px 20px; background: var(--cream); border-top: 1px solid var(--line); }
+  .cart-summary .row { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 14px; }
+  .cart-summary .total { font-weight: 700; font-size: 17px; color: var(--green-dark); margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--line); }
+  
+  .cart-form { margin: 12px 0; display: flex; flex-direction: column; gap: 10px; }
   .cart-form input, .cart-form textarea {
-    width: 100%;
-    padding: 11px 13px;
-    border: 1.5px solid var(--line);
-    border-radius: 10px;
-    font-size: 0.92rem;
-    color: var(--ink);
-    background: var(--mint);
+    width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--line); font-size: 14px;
   }
-  .cart-form input:focus, .cart-form textarea:focus {
-    outline: none;
-    border-color: var(--green-700);
-    background: #fff;
-  }
-  .cart-form textarea { resize: vertical; min-height: 64px; }
 
-  .cart-summary { border-top: 1px solid var(--line); padding: 16px 20px; background: var(--mint); }
-  .sum-row { display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--ink-soft); margin-bottom: 8px; }
-  .sum-row.total { font-size: 1.1rem; font-weight: 700; color: var(--green-900); margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); }
-  .cart-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 14px; }
-  .cart-actions .btn { width: 100%; }
-  .btn-wa { background: #25D366; color: #fff; }
-  .btn-wa:hover { background: #1fb955; }
-  .btn-email { background: #fff; color: var(--green-900); border-color: var(--green-900); }
-  .form-note { font-size: 0.74rem; color: var(--ink-soft); margin-top: 2px; }
-
-  .toast {
-    position: fixed;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%) translateY(20px);
-    background: var(--green-900);
-    color: #fff;
-    padding: 12px 22px;
-    border-radius: var(--radius-pill);
-    font-size: 0.88rem;
-    font-weight: 600;
-    z-index: 120;
-    box-shadow: var(--shadow-md);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .25s ease, transform .25s ease;
+  /* Mobile Bar */
+  .mobile-bar {
+    display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+    background: #fff; border-top: 1px solid var(--line); padding: 10px 16px; gap: 10px;
   }
-  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-
-  @media (max-width: 980px) {
-    nav.main-nav { display: none; }
-    .header-cta.call span, .header-cta.wa span { display: none; }
-    .header-cta { padding: 10px; width: 42px; height: 42px; }
-    .hero .wrap { grid-template-columns: 1fr; }
-    .hero-visual { order: -1; }
-    .hero-visual .frame { aspect-ratio: 16/11; }
-    .story .wrap { grid-template-columns: 1fr; }
-    .contact .wrap { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
+  .mobile-bar a {
+    flex: 1; padding: 12px; border-radius: 12px; font-weight: 700; font-size: 14px;
+    text-align: center;
   }
-  @media (max-width: 720px) {
-    section { padding: 44px 0; }
-    .product-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
-    .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 130px; }
+  .mobile-bar .m-call { border: 1.5px solid var(--charcoal); color: var(--charcoal); }
+  .mobile-bar .m-cart { background: var(--green-dark); color: #fff; }
+
+  @media (max-width: 900px) {
+    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .hero-inner, .story-inner, .contact-inner { grid-template-columns: 1fr; }
+    .hero-media { order: -1; }
+    .hero-media img { height: 320px; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .mobile-bar { display: flex; }
-    body { padding-bottom: 74px; }
-    .footer-grid { grid-template-columns: 1fr; }
-    .cart-drawer { width: 100vw; }
-    .hero-cta-row .btn { width: 100%; }
-    .card-title { min-height: 2.4em; font-size: 0.86rem; }
+    body { padding-bottom: 70px; }
+    nav.main-nav { display: none; }
   }
 </style>
 </head>
 <body>
 
-<script>
-  function imgFallback(img) {
-    img.onerror = null;
-    img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300"><rect width="300" height="300" fill="%23f4fbf7"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="16" fill="%232d6a4f" font-weight="bold">FarmToPack</text></svg>';
-  }
-</script>
-
 <!-- Header -->
 <header class="site-header">
   <div class="wrap header-inner">
     <a href="#home" class="brand">
-      <img src="https://i.ibb.co/4wN53yjT/66460.png" alt="FarmToPack logo" onerror="imgFallback(this)">
-      <div class="brand-text">
-        <div class="name">FarmToPack</div>
-        <div class="sub">Gadegaon · Amravati</div>
-      </div>
+      <img src="https://i.ibb.co/7NzHr1D0/66460.png" alt="FarmToPack logo">
+      <span class="brand-text"><b>FarmToPack</b><span>Gadegaon · Amravati</span></span>
     </a>
     <nav class="main-nav">
       <a href="#home">Home</a>
@@ -709,16 +285,9 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="header-actions">
-      <a class="header-cta call" href="tel:+919325692210">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span>Call</span>
-      </a>
-      <a class="header-cta wa" href="https://wa.me/919325692210" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.93-.26-.1-.46-.15-.65.15-.2.29-.75.93-.92 1.12-.17.2-.34.22-.63.08-.29-.15-1.23-.45-2.34-1.44-.87-.77-1.45-1.72-1.62-2.02-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.08-.15-.65-1.56-.89-2.14-.23-.56-.47-.48-.65-.49-.17-.01-.36-.01-.56-.01-.2 0-.51.07-.78.37-.26.29-1.02 1-1.02 2.43 0 1.43 1.05 2.82 1.19 3.01.15.2 2.06 3.15 5 4.42.7.3 1.24.48 1.67.61.7.22 1.34.19 1.84.12.56-.08 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.37-.07-.12-.26-.2-.55-.34z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.86.5 3.65 1.44 5.22L2 22l4.9-1.43a9.95 9.95 0 0 0 5.12 1.4h.01c5.52 0 10-4.48 10-10s-4.49-9.97-10.01-9.97zm0 18.13h-.01a8.1 8.1 0 0 1-4.14-1.13l-.3-.18-3.08.9.82-3-.19-.31a8.13 8.13 0 0 1-1.25-4.4c0-4.5 3.66-8.16 8.16-8.16 4.5 0 8.16 3.66 8.16 8.17 0 4.5-3.67 8.11-8.17 8.11z"/></svg>
-        <span>WhatsApp</span>
-      </a>
-      <button class="icon-btn" onclick="openCart()" aria-label="Open Cart">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <a class="btn btn-outline" style="padding:8px 16px; font-size:13px;" href="tel:+919325692210">Call</a>
+      <button class="icon-btn" onclick="openCart()" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
         <span class="cart-count" id="header-cart-count">0</span>
       </button>
     </div>
@@ -727,42 +296,19 @@
 
 <!-- Hero Section -->
 <section class="hero" id="home">
-  <div class="wrap">
+  <div class="wrap hero-inner">
     <div class="hero-copy">
-      <div class="eyebrow">Farm-Based · Gadegaon, Amravati</div>
-      <h1>Direct From Our Farm to Your Kitchen, Naturally.</h1>
-      <p class="lead">Pure, natural spices and superfood powders cultivated and hand-packed directly from our farm setup in Gadegaon. Authentic taste, zero adulteration, and guaranteed freshness.</p>
-      <div class="trust-row">
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Farm-Direct Packing
-        </div>
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Flat ₹60 Delivery
-        </div>
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Direct Farmer Connection
-        </div>
-      </div>
-      <div class="hero-cta-row">
-        <a href="#products" class="btn btn-primary">Shop Now</a>
-        <a href="https://wa.me/919325692210" class="btn btn-outline" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <span class="eyebrow">Farm-Based · Gadegaon, Amravati</span>
+      <h1>From Our Farm to<br>Your Pack, Naturally.</h1>
+      <p>Fresh mushrooms and authentic natural superfood powders, prepared and packed directly from our setup in Gadegaon.</p>
+      <div class="hero-actions">
+        <a class="btn btn-green" href="#products">Shop All Products</a>
+        <a class="btn btn-outline" href="https://wa.me/919325692210" target="_blank" rel="noopener">WhatsApp Enquiry</a>
       </div>
     </div>
-    <div class="hero-visual">
+    <div class="hero-media">
       <div class="frame">
-        <img src="https://i.ibb.co/7J5c52s9/hero.jpg" alt="FarmToPack Produce" onerror="imgFallback(this)">
-      </div>
-      <div class="hero-badge">
-        <div class="dot">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <div>
-          <strong>Freshly Packed</strong>
-          <span>Sealed at source, weekly</span>
-        </div>
+        <img src="https://i.ibb.co/zh0Mzy0Y/66461.jpg" alt="FarmToPack Farm Setup">
       </div>
     </div>
   </div>
@@ -772,47 +318,37 @@
 <section class="products" id="products">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Pure &amp; Natural Spices</div>
-      <h2>Our Farm Range</h2>
-      <p>Prepared and packed directly from our setup in Gadegaon — no middlemen, no shortcuts.</p>
+      <span class="eyebrow">Pure &amp; Natural</span>
+      <h2>Our Complete Farm Range</h2>
+      <p>Prepared directly with zero adulteration — fresh from Gadegaon to your doorstep.</p>
     </div>
     <div class="product-grid" id="product-grid"></div>
   </div>
 </section>
 
-<!-- Our Story Section -->
+<!-- Story Section -->
 <section class="story" id="story">
-  <div class="wrap">
-    <div class="story-copy">
-      <div class="eyebrow">Our Story</div>
-      <h2>Grown Close to Home. Packed With Care.</h2>
-      <p>FarmToPack is a family-run farm-based business from Gadegaon, Warud, Amravati[span_0](start_span)[span_0](end_span). Jay Rajendra Nikam leads FarmToPack with technical engineering expertise, while Om Rajendra Nikam manages production and manufacturing[span_1](start_span)[span_1](end_span). Together, we cultivate, prepare, and pack authentic spices, mushrooms, and superfoods directly from our farm setup to your doorstep[span_2](start_span)[span_2](end_span).</p>
+  <div class="wrap story-inner">
+    <div>
+      <span class="eyebrow">Our Story</span>
+      <h2 style="font-size:36px; margin: 12px 0 16px; font-style:italic;">Grown Close to Home.<br>Packed With Care.</h2>
+      <p style="color:#5a5a4d; line-height:1.7;">FarmToPack is a farm-based venture from Gadegaon, Warud, Amravati. Jay Rajendra Nikam manages technical engineering and platform operations, while Om Rajendra Nikam leads production and solar-backed processing. Together, we ensure pure, unadulterated goodness directly to our customers.</p>
     </div>
     <div class="team-grid">
       <div class="team-card">
-        <div class="photo">
-          <img src="https://i.ibb.co/yn2m28pH/jay.jpg" alt="Jay Rajendra Nikam" onerror="imgFallback(this)">
-        </div>
-        <div class="info">
-          <div class="name">Jay Rajendra Nikam</div>
-          <div class="role">Founder &amp; Owner<br>Software Engineer (CSE)</div>
-          <a class="ig-link" href="https://www.instagram.com/jay_nikam9325" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            @jay_nikam9325
-          </a>
+        <img src="https://i.ibb.co/bRqVGLCS/66444.jpg" alt="Jay Nikam">
+        <div>
+          <h4 style="font-size:18px;">Jay Rajendra Nikam</h4>
+          <div style="font-size:12px; color:var(--chili); font-weight:700; text-transform:uppercase;">Founder &amp; Owner</div>
+          <div style="font-size:13px; color:#6a6a5d;">Software Engineer (CSE)</div>
         </div>
       </div>
       <div class="team-card">
-        <div class="photo">
-          <img src="https://i.ibb.co/xScnVxn7/om.jpg" alt="Om Rajendra Nikam" onerror="imgFallback(this)">
-        </div>
-        <div class="info">
-          <div class="name">Om Rajendra Nikam</div>
-          <div class="role">Manufacturer &amp; Producer<br>Solar Technician</div>
-          <a class="ig-link" href="https://www.instagram.com/omnikam_1x" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            @omnikam_1x
-          </a>
+        <img src="https://i.ibb.co/zWv8PWj4/66446.jpg" alt="Om Nikam">
+        <div>
+          <h4 style="font-size:18px;">Om Rajendra Nikam</h4>
+          <div style="font-size:12px; color:var(--chili); font-weight:700; text-transform:uppercase;">Manufacturer &amp; Producer</div>
+          <div style="font-size:13px; color:#6a6a5d;">Solar Technician</div>
         </div>
       </div>
     </div>
@@ -823,171 +359,188 @@
 <section class="gallery">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">The Farm</div>
+      <span class="eyebrow">Farm Setup</span>
       <h2>See Where the Journey Begins</h2>
     </div>
     <div class="gallery-grid">
-      <a href="https://i.ibb.co/x8gHJCdQ/1038.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/x8gHJCdQ/1038.jpg" alt="Farm photo 1" loading="lazy" onerror="imgFallback(this)"></a>
-      <a href="https://i.ibb.co/twFjR5qD/1035.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/twFjR5qD/1035.jpg" alt="Farm photo 2" loading="lazy" onerror="imgFallback(this)"></a>
-      <a href="https://i.ibb.co/ZRLpfY82/1033.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/ZRLpfY82/1033.jpg" alt="Farm photo 3" loading="lazy" onerror="imgFallback(this)"></a>
-      <a href="https://i.ibb.co/qF3LyzdS/1047.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/qF3LyzdS/1047.jpg" alt="Farm photo 4" loading="lazy" onerror="imgFallback(this)"></a>
-      <a href="https://i.ibb.co/S7d3kFwC/997.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/S7d3kFwC/997.jpg" alt="Interaction photo 1" loading="lazy" onerror="imgFallback(this)"></a>
-      <a href="https://i.ibb.co/Vc7g8WBJ/998.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/Vc7g8WBJ/998.jpg" alt="Interaction photo 2" loading="lazy" onerror="imgFallback(this)"></a>
-      <a href="https://i.ibb.co/0VYCkMWR/1037.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/0VYCkMWR/1037.jpg" alt="Interaction photo 3" loading="lazy" onerror="imgFallback(this)"></a>
-      <a href="https://i.ibb.co/R5Lr5cT/1048.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/R5Lr5cT/1048.jpg" alt="Interaction photo 4" loading="lazy" onerror="imgFallback(this)"></a>
+      <a href="https://i.ibb.co/x8gHJCdQ/1038.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/x8gHJCdQ/1038.jpg" alt="Farm Photo" loading="lazy"></a>
+      <a href="https://i.ibb.co/twFjR5qD/1035.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/twFjR5qD/1035.jpg" alt="Farm Photo" loading="lazy"></a>
+      <a href="https://i.ibb.co/ZRLpfY82/1033.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/ZRLpfY82/1033.jpg" alt="Farm Photo" loading="lazy"></a>
+      <a href="https://i.ibb.co/qF3LyzdS/1047.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/qF3LyzdS/1047.jpg" alt="Farm Photo" loading="lazy"></a>
+      <a href="https://i.ibb.co/S7d3kFwC/997.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/S7d3kFwC/997.jpg" alt="Farm Photo" loading="lazy"></a>
+      <a href="https://i.ibb.co/Vc7g8WBJ/998.jpg" target="_blank" rel="noopener"><img src="https://i.ibb.co/Vc7g8WBJ/998.jpg" alt="Farm Photo" loading="lazy"></a>
     </div>
   </div>
 </section>
 
 <!-- Contact Section -->
 <section class="contact" id="contact">
-  <div class="wrap">
+  <div class="wrap contact-inner">
     <div class="contact-card">
-      <div class="eyebrow" style="margin-bottom:18px;">Get In Touch</div>
-      <div class="contact-row">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <div>
-          <div class="label">Address</div>
-          <div class="val">FarmToPack, At. Post Gadegaon, Tal. Warud, Dist. Amravati, Maharashtra, India[span_3](start_span)[span_3](end_span)</div>
-        </div>
-      </div>
-      <div class="contact-row">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-        <div>
-          <div class="label">Phone Support</div>
-          <div class="val"><a href="tel:+919325692210">+91 93256 92210</a> / <a href="tel:+919420055259">+91 94200 55259</a>[span_4](start_span)[span_4](end_span)</div>
-        </div>
-      </div>
-      <div class="contact-row">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" fill="none"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></div>
-        <div>
-          <div class="label">Email Address</div>
-          <div class="val"><a href="mailto:jaynikamjay@gmail.com">jaynikamjay@gmail.com</a>[span_5](start_span)[span_5](end_span)</div>
-        </div>
-      </div>
+      <span class="eyebrow" style="color:var(--gold);">Contact Details</span>
+      <h3>FarmToPack Setup</h3>
+      <p>At. Post Gadegaon, Tal. Warud, Dist. Amravati, Maharashtra, India</p>
+      <p><strong>Phone:</strong> <a href="tel:+919325692210" style="color:#fff;">+91 93256 92210</a> / <a href="tel:+919420055259" style="color:#fff;">+91 94200 55259</a></p>
+      <p><strong>Email:</strong> <a href="mailto:jaynikamjay@gmail.com" style="color:#fff;">jaynikamjay@gmail.com</a></p>
     </div>
-    <div class="map-frame">
-      <iframe src="https://maps.google.com/maps?q=Gadegaon%2C%20Taluka%20Warud%2C%20District%20Amravati%2C%20Maharashtra%2C%20India&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="FarmToPack Map"></iframe>
+    <div style="border-radius:var(--radius); overflow:hidden; min-height:300px;">
+      <iframe src="https://maps.google.com/maps?q=Gadegaon%2C%20Taluka%20Warud%2C%20District%20Amravati%2C%20Maharashtra%2C%20India&output=embed" width="100%" height="100%" style="border:0; min-height:300px;" loading="lazy"></iframe>
     </div>
   </div>
 </section>
-
-<!-- Footer -->
-<footer>
-  <div class="wrap footer-grid">
-    <div>
-      <div class="footer-brand">
-        <img src="https://i.ibb.co/4wN53yjT/66460.png" alt="Logo" onerror="imgFallback(this)">
-        <div class="name">FarmToPack</div>
-      </div>
-      <p>Direct from our farm in Gadegaon to your pack. Pure, chemical-free and thoughtfully cultivated superfoods &amp; spices[span_6](start_span)[span_6](end_span).</p>
-      <div class="footer-social">
-        <a href="https://www.instagram.com/jay_nikam9325" target="_blank" rel="noopener" aria-label="Jay Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-        <a href="https://www.instagram.com/omnikam_1x" target="_blank" rel="noopener" aria-label="Om Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-        <a href="mailto:jaynikamjay@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
-        </a>
-      </div>
-    </div>
-    <div>
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#products">All Products</a></li>
-        <li><a href="#story">Our Story</a></li>
-        <li><a href="#contact">Contact &amp; Location</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Direct Contact</h4>
-      <p>At. Post Gadegaon, Taluka Warud, Dist. Amravati, Maharashtra[span_7](start_span)[span_7](end_span)</p>
-      <p style="margin-top:8px;"><strong>Phone:</strong> +91 93256 92210</p>
-      <p><strong>Email:</strong> jaynikamjay@gmail.com</p>
-    </div>
-  </div>
-  <div class="footer-bottom wrap">
-    © 2026 FarmToPack, Gadegaon. All rights reserved.
-  </div>
-</footer>
-
-<!-- Mobile Sticky Bar -->
-<div class="mobile-bar">
-  <a class="m-call" href="tel:+919325692210">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    Call Us
-  </a>
-  <a class="m-wa" href="javascript:void(0)" onclick="openCart()">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-    View Cart (<span id="mobile-cart-count">0</span>)
-  </a>
-</div>
 
 <!-- Cart Drawer -->
 <div class="overlay" id="overlay" onclick="closeCart()"></div>
 <aside class="cart-drawer" id="cart-drawer">
   <div class="cart-head">
-    <h3>Your Order Basket</h3>
-    <button class="cart-close" onclick="closeCart()" aria-label="Close cart">✕</button>
+    <h3 style="font-size:18px;">Your Order Basket</h3>
+    <button onclick="closeCart()" style="font-size:20px; background:none;">✕</button>
   </div>
   <div class="cart-body" id="cart-body"></div>
   <div class="cart-summary" id="cart-summary">
-    <div class="sum-row">
-      <span>Subtotal</span>
-      <span id="sum-subtotal">₹0</span>
-    </div>
-    <div class="sum-row">
-      <span>Flat Delivery Fee</span>
-      <span id="sum-delivery">₹60</span>
-    </div>
-    <div class="sum-row total">
-      <span>Final Total</span>
-      <span id="sum-total">₹60</span>
-    </div>
+    <div class="row"><span>Subtotal:</span><span id="sum-subtotal">₹0</span></div>
+    <div class="row"><span>Delivery Fee:</span><span>₹60</span></div>
+    <div class="row total"><span>Total Payable:</span><span id="sum-total">₹60</span></div>
+    
     <div class="cart-form">
-      <div>
-        <label>Full Name *</label>
-        <input type="text" id="cust-name" placeholder="Enter your full name">
-      </div>
-      <div>
-        <label>Phone Number *</label>
-        <input type="tel" id="cust-phone" placeholder="e.g. 9876543210">
-      </div>
-      <div>
-        <label>Full Delivery Address *</label>
-        <textarea id="cust-address" placeholder="House/Flat No, Landmark, Village/City, Pincode"></textarea>
-      </div>
-      <div class="form-note">We will confirm your order and delivery schedule via WhatsApp/Call.</div>
+      <input type="text" id="cust-name" placeholder="Your Name *">
+      <input type="tel" id="cust-phone" placeholder="Phone Number *">
+      <textarea id="cust-address" placeholder="Delivery Address *" rows="2"></textarea>
     </div>
-    <div class="cart-actions">
-      <button class="btn btn-wa" onclick="checkoutWhatsApp()">Order via WhatsApp</button>
-      <button class="btn btn-email" onclick="checkoutEmail()">Order via Email</button>
-    </div>
+    
+    <button class="btn btn-green" style="width:100%;" onclick="checkoutWhatsApp()">Confirm Order via WhatsApp</button>
   </div>
 </aside>
 
-<div class="toast" id="toast">Item added to basket!</div>
+<!-- Mobile Fixed Bar -->
+<div class="mobile-bar">
+  <a class="m-call" href="tel:+919325692210">Call Us</a>
+  <a class="m-cart" href="javascript:void(0)" onclick="openCart()">Basket (<span id="mobile-cart-count">0</span>)</a>
+</div>
 
-<!-- Application Logic -->
+<!-- Product Data & Engine -->
 <script>
   const PRODUCTS = [
-    { id: 1, title: 'Organic Moringa Powder (Pouch)', weight: '125g', mrp: 240, offer: 200, img: 'https://i.ibb.co/fYNVHBw9/moringa.jpg' },
-    { id: 2, title: 'Premium Dried Oyster Mushroom', weight: '75g', mrp: 200, offer: 160, img: 'https://i.ibb.co/BV13dqXv/mushroom.jpg' },
-    { id: 3, title: 'Dried Red Chili Flakes (Pouch)', weight: '125g', mrp: 120, offer: 80, img: 'https://i.ibb.co/HfgsJmvV/flakes.jpg' },
-    { id: 4, title: 'Pure Turmeric Powder (Pouch)', weight: '125g', mrp: 130, offer: 90, img: 'https://i.ibb.co/3Y0qyncK/turmeric.jpg' },
-    { id: 5, title: 'Organic Red Chili Powder (Pouch)', weight: '125g', mrp: 130, offer: 90, img: 'https://i.ibb.co/GvLtVKxh/chili.jpg' },
-    { id: 6, title: 'Organic Beetroot Powder (Jar)', weight: '75g', mrp: 249, offer: 209, img: 'https://i.ibb.co/QFmq90hq/beetroot.jpg' },
-    { id: 7, title: 'Organic Onion Powder (Jar)', weight: '75g', mrp: 170, offer: 130, img: 'https://i.ibb.co/DDYC0JyV/onion.jpg' },
-    { id: 8, title: 'Organic Ginger Powder (Jar)', weight: '75g', mrp: 249, offer: 209, img: 'https://i.ibb.co/v6CBCdGn/ginger.jpg' },
-    { id: 9, title: 'Organic Garlic Powder (Jar)', weight: '75g', mrp: 249, offer: 209, img: 'https://i.ibb.co/7JTtCQMz/garlic.jpg' },
-    { id: 10, title: 'Organic Moringa Powder (Jar)', weight: '75g', mrp: 170, offer: 130, img: 'https://i.ibb.co/wh077Rhc/moringa-jar.jpg' },
-    { id: 11, title: 'Organic Green Chili Powder (Jar)', weight: '75g', mrp: 170, offer: 130, img: 'https://i.ibb.co/gFg2fxpW/green-chili.jpg' },
-    { id: 12, title: 'Organic Curry Leaves Powder (Jar)', weight: '75g', mrp: 200, offer: 160, img: 'https://i.ibb.co/n8zKwS6c/curry.jpg' },
-    { id: 13, title: 'Pure Neem Powder (Jar)', weight: '75g', mrp: 170, offer: 130, img: 'https://i.ibb.co/PKBN1ZP/neem.jpg' },
-    { id: 14, title: 'Oyster Mushroom Powder (Jar)', weight: '75g', mrp: 249, offer: 209, img: 'https://i.ibb.co/Hf3cWFTb/66420.jpg' }
+    {
+      id: 1,
+      title: "Fresh Oyster Mushroom (Box)",
+      weight: "200g",
+      mrp: 140,
+      offer: 100,
+      img: "https://i.ibb.co/BmnBRCy/fresh-mushroom.jpg"
+    },
+    {
+      id: 2,
+      title: "Organic Beetroot Powder (Jar)",
+      weight: "75g",
+      mrp: 249,
+      offer: 209,
+      img: "https://i.ibb.co/4nGyw7rK/beetroot.jpg"
+    },
+    {
+      id: 3,
+      title: "Oyster Mushroom Powder (Jar)",
+      weight: "75g",
+      mrp: 249,
+      offer: 209,
+      img: "https://i.ibb.co/b5qhhZCC/mushroom-powder.jpg"
+    },
+    {
+      id: 4,
+      title: "Organic Onion Powder (Jar)",
+      weight: "75g",
+      mrp: 170,
+      offer: 130,
+      img: "https://i.ibb.co/7dTJy1sn/onion.jpg"
+    },
+    {
+      id: 5,
+      title: "Organic Ginger Powder (Jar)",
+      weight: "75g",
+      mrp: 249,
+      offer: 209,
+      img: "https://i.ibb.co/wFfZ1krn/ginger.jpg"
+    },
+    {
+      id: 6,
+      title: "Organic Garlic Powder (Jar)",
+      weight: "75g",
+      mrp: 249,
+      offer: 209,
+      img: "https://i.ibb.co/NdjKkHdk/garlic.jpg"
+    },
+    {
+      id: 7,
+      title: "Organic Curry Leaves Powder (Jar)",
+      weight: "75g",
+      mrp: 200,
+      offer: 160,
+      img: "https://i.ibb.co/3m0tPg29/curry.jpg"
+    },
+    {
+      id: 8,
+      title: "Organic Moringa Powder (Jar)",
+      weight: "75g",
+      mrp: 170,
+      offer: 130,
+      img: "https://i.ibb.co/FqchDZp7/moringa-jar.jpg"
+    },
+    {
+      id: 9,
+      title: "Organic Green Chili Powder (Jar)",
+      weight: "75g",
+      mrp: 170,
+      offer: 130,
+      img: "https://i.ibb.co/d0CGxfRs/green-chili.jpg"
+    },
+    {
+      id: 10,
+      title: "Pure Neem Powder (Jar)",
+      weight: "75g",
+      mrp: 170,
+      offer: 130,
+      img: "https://i.ibb.co/QG7PKJ0/neem.jpg"
+    },
+    {
+      id: 11,
+      title: "Premium Dried Oyster Mushroom",
+      weight: "75g",
+      mrp: 200,
+      offer: 160,
+      img: "https://i.ibb.co/5WnvR9BN/dried-mushroom.jpg"
+    },
+    {
+      id: 12,
+      title: "Dried Red Chili Flakes (Pouch)",
+      weight: "125g",
+      mrp: 120,
+      offer: 80,
+      img: "https://i.ibb.co/zT40MkMd/flakes.jpg"
+    },
+    {
+      id: 13,
+      title: "Organic Red Chili Powder (Pouch)",
+      weight: "125g",
+      mrp: 130,
+      offer: 90,
+      img: "https://i.ibb.co/gbf7NGZX/chili.jpg"
+    },
+    {
+      id: 14,
+      title: "Pure Turmeric Powder (Pouch)",
+      weight: "125g",
+      mrp: 130,
+      offer: 90,
+      img: "https://i.ibb.co/MynPnb4B/turmeric.jpg"
+    },
+    {
+      id: 15,
+      title: "Organic Moringa Powder (Pouch)",
+      weight: "125g",
+      mrp: 240,
+      offer: 200,
+      img: "https://i.ibb.co/Gb0D8Xh/moringa-pouch.jpg"
+    }
   ];
 
   const FLAT_DELIVERY = 60;
@@ -998,21 +551,27 @@
     if(!grid) return;
     grid.innerHTML = PRODUCTS.map(p => {
       const saved = p.mrp - p.offer;
+      const directMsg = encodeURIComponent(`Hello FarmToPack, I want to directly order:\n*${p.title} (${p.weight})* - ₹${p.offer}\nPlease share delivery and payment details.`);
       return `
-        <div class="card">
-          <div class="card-media">
+        <div class="product-card">
+          <div class="product-media">
             <span class="save-badge">SAVE ₹${saved}</span>
-            <img src="${p.img}" alt="${p.title}" loading="lazy" onerror="imgFallback(this)">
+            <img src="${p.img}" alt="${p.title}" loading="lazy">
           </div>
-          <div class="card-body">
-            <div class="card-title">${p.title}</div>
+          <div class="product-body">
+            <h3>${p.title}</h3>
             <div class="card-weight">Pack size: ${p.weight}</div>
             <div class="price-row">
               <span class="price-offer">₹${p.offer}</span>
               <span class="price-mrp">₹${p.mrp}</span>
             </div>
-            <div class="card-foot" id="foot-${p.id}">
-              ${renderCardFoot(p.id)}
+            <div class="card-actions-grid">
+              <div id="foot-${p.id}">
+                ${renderCardFoot(p.id)}
+              </div>
+              <a class="direct-wa-btn" href="https://wa.me/919325692210?text=${directMsg}" target="_blank" rel="noopener">
+                Order
+              </a>
             </div>
           </div>
         </div>
@@ -1023,7 +582,7 @@
   function renderCardFoot(id) {
     const qty = cart[id] || 0;
     if (qty === 0) {
-      return `<button class="add-btn" onclick="addToCart(${id})">Add to Cart</button>`;
+      return `<button class="add-cart-btn" onclick="addToCart(${id})">Add to Cart</button>`;
     }
     return `
       <div class="qty-stepper">
@@ -1034,17 +593,9 @@
     `;
   }
 
-  function showToast(msg) {
-    const toast = document.getElementById('toast');
-    toast.innerText = msg;
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 2000);
-  }
-
   function addToCart(id) {
     cart[id] = (cart[id] || 0) + 1;
     updateUI(id);
-    showToast('Item added to basket!');
   }
 
   function updateQty(id, delta) {
@@ -1055,7 +606,7 @@
 
   function updateUI(id) {
     const foot = document.getElementById(`foot-${id}`);
-    if (foot) foot.innerHTML = renderCardFoot(id);
+    if(foot) foot.innerHTML = renderCardFoot(id);
     renderCart();
     updateCounters();
   }
@@ -1072,12 +623,7 @@
     const items = Object.entries(cart);
 
     if (items.length === 0) {
-      body.innerHTML = `
-        <div class="cart-empty">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          <p>Your basket is currently empty.<br>Add items to place an order.</p>
-        </div>
-      `;
+      body.innerHTML = `<p style="text-align:center; padding:40px 10px; color:#888;">Your basket is empty.</p>`;
       summary.style.display = 'none';
       return;
     }
@@ -1091,33 +637,22 @@
       subtotal += lineTotal;
       return `
         <div class="cart-item">
-          <img src="${p.img}" alt="${p.title}" onerror="imgFallback(this)">
+          <img src="${p.img}" alt="${p.title}">
           <div>
-            <div class="ci-title">${p.title}</div>
-            <div class="ci-sub">${p.weight} · ₹${p.offer} each</div>
-            <a href="javascript:void(0)" class="ci-remove" onclick="removeProduct(${p.id})">Remove</a>
+            <div style="font-weight:600; font-size:13.5px;">${p.title}</div>
+            <div style="font-size:12px; color:#777;">₹${p.offer} x ${qty} = ₹${lineTotal}</div>
           </div>
-          <div class="ci-price-col">
-            <div class="ci-stepper">
-              <button onclick="updateQty(${p.id}, -1)">−</button>
-              <span>${qty}</span>
-              <button onclick="updateQty(${p.id}, 1)">+</button>
-            </div>
-            <div style="font-weight:700; margin-top:6px; font-size:0.9rem;">₹${lineTotal}</div>
+          <div style="display:flex; gap:6px; align-items:center;">
+            <button onclick="updateQty(${p.id}, -1)" style="padding:2px 8px; border:1px solid #ccc; border-radius:4px;">-</button>
+            <span style="font-weight:700;">${qty}</span>
+            <button onclick="updateQty(${p.id}, 1)" style="padding:2px 8px; border:1px solid #ccc; border-radius:4px;">+</button>
           </div>
         </div>
       `;
     }).join('');
 
-    const total = subtotal + FLAT_DELIVERY;
     document.getElementById('sum-subtotal').innerText = `₹${subtotal}`;
-    document.getElementById('sum-delivery').innerText = `₹${FLAT_DELIVERY}`;
-    document.getElementById('sum-total').innerText = `₹${total}`;
-  }
-
-  function removeProduct(id) {
-    delete cart[id];
-    updateUI(id);
+    document.getElementById('sum-total').innerText = `₹${subtotal + FLAT_DELIVERY}`;
   }
 
   function openCart() {
@@ -1130,95 +665,52 @@
     document.getElementById('cart-drawer').classList.remove('open');
   }
 
-  function validateCustomerDetails() {
+  function checkoutWhatsApp() {
     const name = document.getElementById('cust-name').value.trim();
     const phone = document.getElementById('cust-phone').value.trim();
     const address = document.getElementById('cust-address').value.trim();
 
-    if (!name || !phone || !address) {
-      alert('Please fill out your Name, Phone Number, and Delivery Address to proceed.');
-      return null;
+    if(!name || !phone || !address) {
+      alert('Please enter your Name, Phone Number, and Delivery Address!');
+      return;
     }
-    return { name, phone, address };
-  }
 
-  function buildOrderSummary(details) {
     let subtotal = 0;
-    let listText = '';
+    let itemsText = '';
+    let counter = 1;
 
-    Object.entries(cart).forEach(([idStr, qty], index) => {
+    Object.entries(cart).forEach(([idStr, qty]) => {
       const p = PRODUCTS.find(prod => prod.id === parseInt(idStr));
       const line = p.offer * qty;
       subtotal += line;
-      listText += `${index + 1}. ${p.title} (${p.weight}) x ${qty} = ₹${line}\n`;
+      itemsText += `  ${counter}. ${p.title} (${p.weight})\n     x ${qty} = ₹${line}\n\n`;
+      counter++;
     });
 
     const finalTotal = subtotal + FLAT_DELIVERY;
-    return { subtotal, finalTotal, listText };
-  }
-
-  function checkoutWhatsApp() {
-    const details = validateCustomerDetails();
-    if (!details) return;
-
-    const { subtotal, finalTotal, listText } = buildOrderSummary(details);
 
     const message = 
-`*NEW ORDER - FarmToPack* 🛒
---------------------------------
-*Customer Details:*
-👤 Name: ${details.name}
-📞 Phone: ${details.phone}
-📍 Address: ${details.address}
+`NEW ORDER - 
+FarmToPack 🛒
+-----------------------
 
-*Ordered Items:*
-${listText}
---------------------------------
+Customer Details:
+👤 Name: ${name}
+📞 Phone: ${phone}
+📍 Address: ${address}
+
+Ordered Items:
+${itemsText}-----------------------
+
 📦 Items Subtotal: ₹${subtotal}
 🚚 Delivery Charges: ₹${FLAT_DELIVERY}
-💰 *Total Payable: ₹${finalTotal}*
---------------------------------
-Please confirm my order and share payment details.`;
+💰 Total Payable: ₹${finalTotal}
+
+-----------------------
+Please confirm my order`;
 
     window.open(`https://wa.me/919325692210?text=${encodeURIComponent(message)}`, '_blank');
   }
-
-  function checkoutEmail() {
-    const details = validateCustomerDetails();
-    if (!details) return;
-
-    const { subtotal, finalTotal, listText } = buildOrderSummary(details);
-
-    const subject = encodeURIComponent(`New Order from ${details.name} — FarmToPack`);
-    const body = encodeURIComponent(
-`New FarmToPack Order Details:
-
-Customer Name: ${details.name}
-Phone: ${details.phone}
-Address: ${details.address}
-
-Items:
-${listText}
-
-Subtotal: ₹${subtotal}
-Delivery Fee: ₹${FLAT_DELIVERY}
-Final Total: ₹${finalTotal}
-`
-    );
-
-    window.location.href = `mailto:jaynikamjay@gmail.com?subject=${subject}&body=${body}`;
-  }
-
-  window.addEventListener('scroll', () => {
-    const header = document.querySelector('.site-header');
-    if (header) {
-      if (window.scrollY > 20) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    }
-  });
 
   window.addEventListener('DOMContentLoaded', () => {
     initProducts();
